@@ -15,11 +15,11 @@ function ChatInput({ setMessages, messages, setLoading, loading }) {
 
     const updatedMessages = [...messages, newMessage];
 
-    setMessages(updatedMessages); // ✅ just update state
+    setMessages(updatedMessages); // update state
 
     setInput("");
 
-    sendToAI(updatedMessages); // ✅ call API separately
+    sendToAI(updatedMessages); //  call API separately
   };
 
   const sendToAI = async (updatedMessages) => {
