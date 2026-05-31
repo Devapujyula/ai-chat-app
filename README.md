@@ -1,137 +1,139 @@
-# 🤖 AI Chat App (React + OpenRouter)
+# AI Chat App
 
-A modern AI-powered chat application built using React and OpenRouter API.  
-This app allows users to interact with an AI assistant with real-time responses and conversation memory.
+A ChatGPT-style AI chat application built with React and powered by OpenRouter API. Users can have context-aware conversations with an AI assistant that remembers previous messages in the session.
 
----
-
-## 🚀 Features
-
-- 💬 Chat-based UI (like ChatGPT)
-- 🤖 AI responses using OpenRouter API
-- 🧠 Context-aware conversation (remembers previous messages)
-- ⏳ "AI is typing..." loading indicator
-- 📜 Auto-scroll to latest message
-- ⌨️ Send message using Enter key
-- 🚫 Prevent multiple clicks during loading
-- ❌ Error handling UI
-- 📱 Responsive design (mobile + desktop)
+**Live Demo:** [Your Vercel URL here]
 
 ---
 
-## 🛠️ Tech Stack
+## Features
 
-- React (Hooks: useState, useEffect)
-- Axios (API calls)
-- OpenRouter API (LLM integration)
-- JavaScript (ES6+)
-- CSS (inline styling)
-
----
-
-## 📂 Project Structure
-
-# 🤖 AI Chat App (React + OpenRouter)
-
-A modern AI-powered chat application built using React and OpenRouter API.  
-This app allows users to interact with an AI assistant with real-time responses and conversation memory.
+- Chat-based UI with user and AI message bubbles
+- Context-aware conversation (full message history sent with each request)
+- "AI is typing..." loading indicator
+- Auto-scroll to the latest message
+- Send message with Enter key or Send button
+- Error handling with user-friendly messages
+- Responsive layout for mobile and desktop
 
 ---
 
-## 🚀 Features
+## Tech Stack
 
-- 💬 Chat-based UI (like ChatGPT)
-- 🤖 AI responses using OpenRouter API
-- 🧠 Context-aware conversation (remembers previous messages)
-- ⏳ "AI is typing..." loading indicator
-- 📜 Auto-scroll to latest message
-- ⌨️ Send message using Enter key
-- 🚫 Prevent multiple clicks during loading
-- ❌ Error handling UI
-- 📱 Responsive design (mobile + desktop)
+| Technology | Purpose |
+|---|---|
+| React 19 | UI framework |
+| Vite | Build tool and dev server |
+| Axios | HTTP requests |
+| OpenRouter API | AI model integration (GPT-3.5 Turbo) |
 
 ---
 
-## 🛠️ Tech Stack
+## Project Structure
 
-- React (Hooks: useState, useEffect)
-- Axios (API calls)
-- OpenRouter API (LLM integration)
-- JavaScript (ES6+)
-- CSS (inline styling)
-
----
-
-## 📂 Project Structure
-
-src/
-├── components/
-│ ├── ChatWindow.jsx
-│ ├── ChatInput.jsx
-├── App.jsx
-├── main.jsx
+```
+ai-chat-app/
+├── src/
+│   ├── components/
+│   │   ├── ChatInput.jsx   # Input box, send button, API call logic
+│   │   └── ChatWindow.jsx  # Message list with auto-scroll
+│   ├── App.jsx             # Root component, state management
+│   └── main.jsx            # Entry point
+├── .env                    # API key (not committed to git)
+├── .gitignore
+└── package.json
+```
 
 ---
 
-## ⚙️ Setup Instructions
+## Getting Started Locally
 
-1. Clone the repository:
+### Prerequisites
 
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+- Node.js v18 or higher
+- An [OpenRouter](https://openrouter.ai) account with an API key
 
-2. Navigate to project:
+### 1. Clone the repository
 
+```bash
+git clone https://github.com/YOUR_USERNAME/ai-chat-app.git
 cd ai-chat-app
+```
 
-3. Install dependencies:
+### 2. Install dependencies
 
+```bash
 npm install
+```
 
-4. Create a `.env` file in root folder:
+### 3. Create the environment file
 
-VITE_APP_KEY=your_openrouter_api_key
+Create a `.env` file in the root of the project:
 
-5. Run the app:
+```
+VITE_APP_KEY=your_openrouter_api_key_here
+```
 
+To get an API key:
+1. Sign up at [openrouter.ai](https://openrouter.ai)
+2. Go to **Keys** → **Create Key**
+3. Copy the key and paste it in your `.env` file
+
+### 4. Start the development server
+
+```bash
 npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 🔑 Environment Variables
+## Deploying to Vercel
 
-| Variable     | Description        |
-| ------------ | ------------------ |
-| VITE_APP_KEY | OpenRouter API key |
+> The `.env` file is gitignored and never pushed to GitHub, so you must add the API key directly in Vercel.
 
----
+### Steps
 
-## 🧠 Key Learnings
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and import your repository
+3. Before deploying, go to **Settings → Environment Variables**
+4. Add the following variable:
 
-- React state management and lifting state up
-- Functional state updates
-- API integration using async/await
-- Handling loading and error states
-- Building context-aware AI chat systems
-- Debugging real-world API errors (401, 404)
+| Name | Value |
+|---|---|
+| `VITE_APP_KEY` | your OpenRouter API key |
 
----
+5. Click **Deploy**
 
-## 🌐 Future Improvements
+### Updating the API key later
 
-- Persistent chat history (localStorage / database)
-- Dark mode UI
-- Better UI with Tailwind CSS or Material UI
-- Backend integration for security
+If your key changes, you do not need to touch the code:
+1. Vercel Dashboard → your project → **Settings → Environment Variables**
+2. Update the value of `VITE_APP_KEY`
+3. Go to **Deployments** → click the latest → **Redeploy**
 
 ---
 
-## 🙌 Acknowledgements
+## Environment Variables
 
-- OpenRouter for AI APIs
-- React for frontend framework
+| Variable | Description | Required |
+|---|---|---|
+| `VITE_APP_KEY` | OpenRouter API key | Yes |
 
 ---
 
-## 👨‍💻 Author
+## Available Scripts
 
-- Prakash Devapujyula
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build locally
+npm run lint     # Run ESLint
+```
+
+---
+
+## Author
+
+**Prakash Devapujyula**
